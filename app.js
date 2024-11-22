@@ -1,33 +1,17 @@
-//import express from 'express';
 const express = require('express');
-
-//import createClient from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-//import {createClient} from '@supabase/supabase-js'
 const supabaseClient = require('@supabase/supabase-js');
-
-//import morgan from 'morgan';
 const morgan = require('morgan');
-
-//import bodyParser from "body-parser";
 const bodyParser = require('body-parser');
-
-//import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
-
 const app = express();
-
 const cors=require("cors");
 const corsOptions ={
    origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
+   credentials:true,            
    optionSuccessStatus:200,
 }
 
-app.use(cors(corsOptions)) // Use this after the variable declaration
-
-
-// using morgan for logs
+app.use(cors(corsOptions)) 
 app.use(morgan('combined'));
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
